@@ -2,7 +2,7 @@
 type ActiveFilterProps = {
     activeTag: string;
     setTag: (tag: string) => void;
-    fetchQuotes: (page: number, newSearch: boolean) => void;
+    fetchQuotes: (page: number, newSearch: boolean, removeActiveTag: boolean) => void;
 }
 
 
@@ -15,7 +15,7 @@ export const ActiveFilter = ({activeTag, setTag, fetchQuotes}: ActiveFilterProps
             className="clear-filter"
             onClick={() => {
               setTag("");
-              fetchQuotes(1, true);
+              fetchQuotes(1, true, true);
             }}
           >
             ✕

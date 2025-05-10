@@ -132,8 +132,3 @@ Response:
 - Clear filters using the "x" button
 - Adjust the number of quotes per page using the input field
 - The UI automatically adapts to dark mode based on your system preferences
-
-## License
-
-[MIT License](LICENSE)
-

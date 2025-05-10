@@ -22,20 +22,20 @@ export const QuoteOfTheDay = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [hasMore, setHasMore] = useState(false);
 
-  const fetchQuotes = async (page: number, newSearch: boolean) => {
+  const fetchQuotes = async (page: number, newSearch: boolean, removeActiveTag = false) => {
     setLoading(true);
     setError("");
 
     if (newSearch) {
       setCurrentPage(0);
-      setActiveTag(tag);
+      setActiveTag(removeActiveTag ? "" : tag);
       page = 1;
     }
 
     try {
       const response = await axios.get<QuoteResponse>("/quotes", {
         params: {
-          ...(tag ? { tag } : {}),
+          ...(removeActiveTag ? {} : { tag }),
           page,
           count,
         },
