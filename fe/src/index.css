@@ -1,0 +1,377 @@
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #213547;
+  background-color: #f9f9f9;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+  font-size: 2.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  align-items: flex-start;
+}
+
+label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-size: 1rem;
+}
+
+input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 50%;
+  max-width: 300px;
+}
+
+button {
+  padding: 0.7rem 1.5rem;
+  background-color: #4a6fa5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-self: flex-end;
+}
+
+button:hover {
+  background-color: #395982;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #dc3545;
+  background-color: #f8d7da;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.quotes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #4a6fa5 #f8f9fa;
+}
+
+.quotes-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.quotes-container::-webkit-scrollbar-track {
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.quotes-container::-webkit-scrollbar-thumb {
+  background-color: #4a6fa5;
+  border-radius: 8px;
+}
+
+.quote-card {
+  background-color: #fff;
+  border-left: 5px solid #4a6fa5;
+  padding: 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.quote-card:hover {
+  transform: translateY(-5px);
+}
+
+blockquote {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+cite {
+  display: block;
+  text-align: right;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.tag-input {
+  width: 50%;
+  min-width: 200px;
+  max-width: 400px;
+}
+
+.active-filter {
+  display: flex;
+  align-items: center;
+  background-color: #f0f4f8;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.tag-badge {
+  display: inline-block;
+  background-color: #4a6fa5;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.tag-badge:hover {
+  background-color: #395982;
+}
+
+.clear-filter {
+  background: none;
+  border: none;
+  color: #dc3545;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  margin-left: auto;
+  transition: color 0.2s;
+}
+
+.clear-filter:hover {
+  color: #b52e3e;
+}
+
+.tags {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.no-quotes {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  color: #666;
+}
+
+.pagination-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  gap: 10px;
+}
+
+.pagination-button {
+  background-color: #6c757d;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.2s;
+  border: none;
+  color: white;
+  cursor: pointer;
+  min-width: 100px;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+}
+
+.pagination-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.page-info {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 1rem;
+}
+
+.visible-label {
+  display: inline-block;
+  font-weight: 600;
+  color: #333;
+  margin-right: 10px;
+  min-width: 150px;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .input-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  label {
+    margin-bottom: 0.5rem;
+  }
+  
+  .tag-input {
+    width: 100% !important;
+  }
+  
+  button {
+    align-self: center;
+    width: 100%;
+  }
+  
+  .pagination-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .pagination-button {
+    width: 100%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  }
+  
+  .quote-card {
+    background-color: #2a2a2a !important;
+    border-left: 5px solid #5d8ac7 !important;
+  }
+  
+  form {
+    background-color: #333 !important;
+  }
+  
+  blockquote {
+    color: rgba(255, 255, 255, 0.87) !important;
+  }
+  
+  cite {
+    color: #aaa !important;
+  }
+  
+  .active-filter {
+    background-color: #333 !important;
+    color: rgba(255, 255, 255, 0.87) !important;
+  }
+  
+  .tag-badge {
+    background-color: #5d8ac7 !important;
+  }
+  
+  .tag-badge:hover {
+    background-color: #4a79b5 !important;
+  }
+  
+  .no-quotes {
+    background-color: #2a2a2a !important;
+    color: #aaa !important;
+  }
+  
+  .quotes-container {
+    scrollbar-color: #5d8ac7 #333;
+  }
+  
+  .quotes-container::-webkit-scrollbar-track {
+    background: #333;
+  }
+  
+  .quotes-container::-webkit-scrollbar-thumb {
+    background-color: #5d8ac7;
+  }
+  
+  .pagination-button {
+    background-color: #444;
+  }
+  
+  .pagination-button:hover:not(:disabled) {
+    background-color: #555;
+  }
+  
+  .page-info {
+    background-color: #333;
+    color: rgba(255, 255, 255, 0.87);
+  }
+  
+  label {
+    color: rgba(255, 255, 255, 0.87);
+  }
+  
+  .visible-label {
+    color: rgba(255, 255, 255, 0.87);
+  }
+}
